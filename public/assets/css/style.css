@@ -56,14 +56,13 @@ article[id] {
 }
 
 .brand-symbol {
-    display: grid;
-    width: 34px;
-    aspect-ratio: 1;
-    place-items: center;
-    background: var(--forest);
-    color: var(--lime);
-    font-family: var(--display-font);
-    font-size: 18px;
+    display: block;
+    width: clamp(150px, 38vw, 220px);
+    max-width: calc(100vw - 112px);
+    height: clamp(44px, 11vw, 54px);
+    flex: 0 1 auto;
+    object-fit: cover;
+    object-position: center;
 }
 
 .navbar-nav .nav-link {

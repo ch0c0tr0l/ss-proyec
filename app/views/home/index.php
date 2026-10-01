@@ -10,6 +10,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?> | ss-proyec</title>
+    <link rel="icon" type="image/png" href="/assets/images/7.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -20,8 +21,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     <header class="site-header sticky-top">
         <nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
             <a class="navbar-brand" href="#inicio" aria-label="ss-proyec, inicio">
-                <span class="brand-symbol" aria-hidden="true">S</span>
-                <span>ss-proyec</span>
+                <img class="brand-symbol" src="/assets/images/1.png" alt="ss-proyec">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir navegación">
                 <span class="navbar-toggler-icon"></span>
@@ -30,16 +30,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                     <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</button>
-                        <ul class="dropdown-menu dropdown-menu-lg-end">
-                            <li><a class="dropdown-item" href="#nosotros">Conócenos</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#mision">Misión</a></li>
-                            <li><a class="dropdown-item" href="#vision">Visión</a></li>
-                            <li><a class="dropdown-item" href="#valores">Valores</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link nav-contact" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -116,14 +107,14 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                         <div class="about-card">
                             <span class="about-card-number">01</span>
                             <h3>Misión</h3>
-                            <p>Impulsar proyectos con propósito, creando soluciones responsables junto a las personas y comunidades involucradas.</p>
+                            <p>Brindar soluciones integrales de mantenimiento, ingeniería y proyectos industriales que contribuyan a la continuidad y eficiencia de las operaciones de nuestros clientes, mediante una ejecución segura, profesional y confiable, cumpliendo los alcances, tiempos y estándares acordados.</p>
                         </div>
                     </article>
                     <article class="col-12 col-md-4" id="vision">
                         <div class="about-card">
                             <span class="about-card-number">02</span>
                             <h3>Visión</h3>
-                            <p>Ser un equipo referente por transformar ideas en proyectos valiosos, sostenibles y preparados para el futuro.</p>
+                            <p>Consolidar a SS-PROYEC como una empresa reconocida y confiable en el sector industrial, distinguiéndonos por nuestra capacidad de respuesta, calidad de ejecución y desarrollo de soluciones que generen relaciones de largo plazo con nuestros clientes.</p>
                         </div>
                     </article>
                     <article class="col-12 col-md-4" id="valores">
@@ -131,9 +122,12 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                             <span class="about-card-number">03</span>
                             <h3>Valores</h3>
                             <ul>
+                                <li>Seguridad</li>
                                 <li>Integridad</li>
-                                <li>Colaboración</li>
                                 <li>Compromiso</li>
+                                <li>Calidad</li>
+                                <li>Profesionalismo</li>
+                                <li>Resultados</li>
                             </ul>
                         </div>
                     </article>
