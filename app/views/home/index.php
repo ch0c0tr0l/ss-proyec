@@ -9,7 +9,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $title ?> | ss-proyec</title>
+    <title><?= $title ?> | SS-PROYECT</title>
     <link rel="icon" type="image/png" href="/assets/images/7.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,15 +40,9 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     <main>
         <section class="hero-section home-jumbotron" id="inicio">
             <div class="container hero-grid">
+                <h1 class="hero-title">Soluciones que mantienen <em>tu operación en movimiento.</em></h1>
                 <figure class="hero-visual">
-                    <img src="/assets/images/imagen1.png" alt="SS-PROYEC: Ingeniería y proyectos industriales">
-                    <div class="hero-services" aria-label="Servicios principales">
-                        <div class="hero-service-item"><img src="/assets/images/imagen2.png" alt="Mantenimiento"></div>
-                        <div class="hero-service-item"><img src="/assets/images/imagen3.png" alt="Automatización"></div>
-                        <div class="hero-service-item"><img src="/assets/images/imagen4.png" alt="Instalaciones"></div>
-                        <div class="hero-service-item"><img src="/assets/images/imagen5.png" alt="Ingeniería"></div>
-                    </div>
-                    <figcaption><span class="visual-dot"></span> De la idea al resultado</figcaption>
+                    <img src="/assets/images/imagen6.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización e instalaciones">
                 </figure>
             </div>
         </section>
@@ -143,8 +137,21 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     </main>
 
     <footer class="site-footer">
-        <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
-            <span>ss-proyec</span>
+        <div class="container d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
+            <a class="footer-brand" href="#inicio" aria-label="ss-proyec, inicio">
+                <span>ss-proyec</span>
+            </a>
+            <nav class="footer-social" aria-label="Redes sociales">
+                <a href="https://prueba.ingex" aria-label="Instagram" title="Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="social-icon-dot" cx="17.5" cy="6.5" r="0.8"></circle></svg>
+                </a>
+                <a href="https://prueba.ingex" aria-label="Facebook" title="Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-icon-fill" d="M13.5 21v-8h2.8l.4-3h-3.2V8c0-.9.3-1.4 1.5-1.4h1.8V3.9c-.9-.1-1.8-.2-2.7-.2-2.7 0-4.5 1.6-4.5 4.5V10H7v3h2.6v8h3.9Z"></path></svg>
+                </a>
+                <a href="https://prueba.ingex" aria-label="WhatsApp" title="WhatsApp">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-3.9A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.5c-.3-.3-.6-.3-.8-.3-.3 0-.5 0-.7.3-.2.2-.8.7-.8 1.7s.8 2 1 2.2c.1.2 1.6 2.5 3.9 3.4 1.9.8 2.3.6 2.7.6.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.5-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.6-.9-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4l.4-.4c.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4L9 8.5Z"></path></svg>
+                </a>
+            </nav>
             <span>© <span data-current-year></span> · Todos los derechos reservados</span>
         </div>
     </footer>
