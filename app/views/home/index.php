@@ -9,7 +9,8 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $title ?> | ss-proyec</title>
+    <title><?= $title ?> | SS-PROYECT</title>
+    <link rel="icon" type="image/png" href="/assets/images/7.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -20,8 +21,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     <header class="site-header sticky-top">
         <nav class="navbar navbar-expand-lg container" aria-label="Navegación principal">
             <a class="navbar-brand" href="#inicio" aria-label="ss-proyec, inicio">
-                <span class="brand-symbol" aria-hidden="true">S</span>
-                <span>ss-proyec</span>
+                <img class="brand-symbol" src="/assets/images/1.png" alt="ss-proyec">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Abrir navegación">
                 <span class="navbar-toggler-icon"></span>
@@ -30,16 +30,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                     <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</button>
-                        <ul class="dropdown-menu dropdown-menu-lg-end">
-                            <li><a class="dropdown-item" href="#nosotros">Conócenos</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#mision">Misión</a></li>
-                            <li><a class="dropdown-item" href="#vision">Visión</a></li>
-                            <li><a class="dropdown-item" href="#valores">Valores</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link nav-contact" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -47,23 +38,13 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     </header>
 
     <main>
-        <section class="hero-section" id="inicio">
+        <section class="hero-section home-jumbotron" id="inicio">
             <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow"><span></span> Ideas que avanzan</p>
-                    <h1>Hacemos que las buenas ideas <em>tomen forma.</em></h1>
-                    <p class="hero-description">Acompañamos cada proyecto desde su primera idea hasta convertirlo en una realidad.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-lime" href="#proyectos">Ver proyectos <span aria-hidden="true">↘</span></a>
-                        <a class="text-link-light" href="#nosotros">Conoce ss-proyec</a>
-                    </div>
-                </div>
+                <h1 class="hero-title">Soluciones que mantienen <em>tu operación en movimiento.</em></h1>
                 <figure class="hero-visual">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Espacio de trabajo luminoso y contemporáneo">
-                    <figcaption><span class="visual-dot"></span> De la idea al resultado</figcaption>
+                    <img src="/assets/images/imagen6.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización e instalaciones">
                 </figure>
             </div>
-            <div class="hero-index" aria-hidden="true">SSP / 01</div>
         </section>
 
         <section class="projects-section page-section" id="proyectos">
@@ -116,14 +97,14 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                         <div class="about-card">
                             <span class="about-card-number">01</span>
                             <h3>Misión</h3>
-                            <p>Impulsar proyectos con propósito, creando soluciones responsables junto a las personas y comunidades involucradas.</p>
+                            <p>Brindar soluciones integrales de mantenimiento, ingeniería y proyectos industriales que contribuyan a la continuidad y eficiencia de las operaciones de nuestros clientes, mediante una ejecución segura, profesional y confiable, cumpliendo los alcances, tiempos y estándares acordados.</p>
                         </div>
                     </article>
                     <article class="col-12 col-md-4" id="vision">
                         <div class="about-card">
                             <span class="about-card-number">02</span>
                             <h3>Visión</h3>
-                            <p>Ser un equipo referente por transformar ideas en proyectos valiosos, sostenibles y preparados para el futuro.</p>
+                            <p>Consolidar a SS-PROYEC como una empresa reconocida y confiable en el sector industrial, distinguiéndonos por nuestra capacidad de respuesta, calidad de ejecución y desarrollo de soluciones que generen relaciones de largo plazo con nuestros clientes.</p>
                         </div>
                     </article>
                     <article class="col-12 col-md-4" id="valores">
@@ -131,9 +112,12 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                             <span class="about-card-number">03</span>
                             <h3>Valores</h3>
                             <ul>
+                                <li>Seguridad</li>
                                 <li>Integridad</li>
-                                <li>Colaboración</li>
                                 <li>Compromiso</li>
+                                <li>Calidad</li>
+                                <li>Profesionalismo</li>
+                                <li>Resultados</li>
                             </ul>
                         </div>
                     </article>
@@ -153,8 +137,21 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     </main>
 
     <footer class="site-footer">
-        <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
-            <span>ss-proyec</span>
+        <div class="container d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
+            <a class="footer-brand" href="#inicio" aria-label="ss-proyec, inicio">
+                <span>ss-proyec</span>
+            </a>
+            <nav class="footer-social" aria-label="Redes sociales">
+                <a href="https://prueba.ingex" aria-label="Instagram" title="Instagram">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="social-icon-dot" cx="17.5" cy="6.5" r="0.8"></circle></svg>
+                </a>
+                <a href="https://prueba.ingex" aria-label="Facebook" title="Facebook">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-icon-fill" d="M13.5 21v-8h2.8l.4-3h-3.2V8c0-.9.3-1.4 1.5-1.4h1.8V3.9c-.9-.1-1.8-.2-2.7-.2-2.7 0-4.5 1.6-4.5 4.5V10H7v3h2.6v8h3.9Z"></path></svg>
+                </a>
+                <a href="https://prueba.ingex" aria-label="WhatsApp" title="WhatsApp">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.4-3.9A8 8 0 1 1 20 11.5Z"></path><path d="M9 8.5c-.3-.3-.6-.3-.8-.3-.3 0-.5 0-.7.3-.2.2-.8.7-.8 1.7s.8 2 1 2.2c.1.2 1.6 2.5 3.9 3.4 1.9.8 2.3.6 2.7.6.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.5-.3l-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.8c-.1.2-.3.2-.5.1-.2-.1-.9-.3-1.6-.9-.6-.5-1-1.1-1.1-1.3-.1-.2 0-.3.1-.4l.4-.4c.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4L9 8.5Z"></path></svg>
+                </a>
+            </nav>
             <span>© <span data-current-year></span> · Todos los derechos reservados</span>
         </div>
     </footer>
