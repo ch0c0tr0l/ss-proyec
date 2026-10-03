@@ -38,23 +38,19 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
     </header>
 
     <main>
-        <section class="hero-section" id="inicio">
+        <section class="hero-section home-jumbotron" id="inicio">
             <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow"><span></span> Ideas que avanzan</p>
-                    <h1>Hacemos que las buenas ideas <em>tomen forma.</em></h1>
-                    <p class="hero-description">Acompañamos cada proyecto desde su primera idea hasta convertirlo en una realidad.</p>
-                    <div class="hero-actions">
-                        <a class="btn btn-lime" href="#proyectos">Ver proyectos <span aria-hidden="true">↘</span></a>
-                        <a class="text-link-light" href="#nosotros">Conoce ss-proyec</a>
-                    </div>
-                </div>
                 <figure class="hero-visual">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Espacio de trabajo luminoso y contemporáneo">
+                    <img src="/assets/images/imagen1.png" alt="SS-PROYEC: Ingeniería y proyectos industriales">
+                    <div class="hero-services" aria-label="Servicios principales">
+                        <div class="hero-service-item"><img src="/assets/images/imagen2.png" alt="Mantenimiento"></div>
+                        <div class="hero-service-item"><img src="/assets/images/imagen3.png" alt="Automatización"></div>
+                        <div class="hero-service-item"><img src="/assets/images/imagen4.png" alt="Instalaciones"></div>
+                        <div class="hero-service-item"><img src="/assets/images/imagen5.png" alt="Ingeniería"></div>
+                    </div>
                     <figcaption><span class="visual-dot"></span> De la idea al resultado</figcaption>
                 </figure>
             </div>
-            <div class="hero-index" aria-hidden="true">SSP / 01</div>
         </section>
 
         <section class="projects-section page-section" id="proyectos">
