@@ -119,13 +119,18 @@ article[id] {
     overflow: hidden;
     padding: 82px 0 94px;
     background-color: var(--hero-background);
-    background-image: linear-gradient(rgba(244, 247, 250, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 247, 250, 0.02) 1px, transparent 1px);
-    background-size: 48px 48px;
     color: var(--paper);
 }
 
 .home-jumbotron {
     padding: 72px 0 84px;
+    background-image:
+        repeating-linear-gradient(0deg, transparent 0 47px, rgba(220, 220, 220, 0.1) 47px 48px),
+        repeating-linear-gradient(90deg, transparent 0 47px, rgba(220, 220, 220, 0.1) 47px 48px),
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+        url("/assets/images/fondo.jpg");
+    background-position: center, center, center, center;
+    background-size: 48px 48px, 48px 48px, cover, cover;
 }
 
 .hero-grid {
@@ -363,7 +368,7 @@ article[id] {
 
 .project-card {
     display: flex;
-    min-height: 300px;
+    min-height: 390px;
     flex-direction: column;
     align-items: flex-start;
     padding: 23px;
@@ -449,8 +454,76 @@ article[id] {
     line-height: 1.65;
 }
 
+.project-offerings {
+    display: grid;
+    gap: 8px;
+    margin: 17px 0 0;
+    padding: 0;
+    color: #555b60;
+    font-size: 14px;
+    line-height: 1.5;
+    list-style: none;
+}
+
+.project-offerings li {
+    padding-left: 17px;
+    position: relative;
+}
+
+.project-offerings li::before {
+    position: absolute;
+    left: 0;
+    color: var(--forest);
+    content: "—";
+}
+
+.project-gallery {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-top: 22px;
+    overflow: hidden;
+    border: 1px solid #6d9fbd;
+}
+
+.project-gallery-item {
+    overflow: hidden;
+    aspect-ratio: 1;
+    margin: 0;
+    border-right: 1px solid #6d9fbd;
+    border-bottom: 1px solid #6d9fbd;
+    background: #fff;
+}
+
+.project-gallery-item:nth-child(3n) {
+    border-right: 0;
+}
+
+.project-gallery-item:nth-last-child(-n + 3) {
+    border-bottom: 0;
+}
+
+.project-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .project-gallery-item:hover img {
+        transform: scale(1.1);
+    }
+}
+
 .about-section {
     background: #eceeed;
+}
+
+.about-grid > article {
+    display: flex;
 }
 
 .about-heading {
@@ -467,6 +540,8 @@ article[id] {
 }
 
 .about-card {
+    width: 100%;
+    height: 100%;
     min-height: 240px;
     padding: 23px;
     border: 1px solid rgba(17, 17, 17, 0.12);
@@ -703,11 +778,11 @@ article[id] {
     }
 
     .project-card {
-        min-height: 270px;
+        min-height: 0;
     }
 
-    .about-card {
-        min-height: 0;
+    .about-grid > article {
+        min-height: 340px;
     }
 
     .contact-section {
@@ -722,6 +797,10 @@ article[id] {
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    .project-gallery-item img {
+        transition: none;
     }
 
     .scroll-reveal {

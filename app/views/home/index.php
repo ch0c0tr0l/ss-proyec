@@ -52,33 +52,41 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow eyebrow-dark">Lo que hacemos</p>
-                        <h2>Proyectos con <em>sentido.</em></h2>
+                        <h2>Dos ramas, un mismo <em>compromiso.</em></h2>
                     </div>
-                    <p class="section-intro">Cada proyecto es una oportunidad para pensar mejor, trabajar en equipo y crear algo que perdure.</p>
+                    <p class="section-intro">Integramos proyectos industriales y servicios para responder a las necesidades de cada operación.</p>
                 </div>
                 <div class="row g-3 project-list">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-6">
                         <article class="project-card project-card-green">
-                            <span class="project-number">01 / PLANIFICACIÓN</span>
-                            <div class="project-mark mark-plan" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <h3>Una dirección clara</h3>
-                            <p>Definimos objetivos y trazamos el camino para alcanzarlos.</p>
+                            <h3>Proyectos industriales</h3>
+                            <div class="project-gallery" aria-label="Galería de proyectos industriales">
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/1.png" alt="Proyecto industrial 1" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/2.png" alt="Proyecto industrial 2" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/3.png" alt="Proyecto industrial 3" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/4.png" alt="Proyecto industrial 4" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/5.png" alt="Proyecto industrial 5" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/6.png" alt="Proyecto industrial 6" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/7.png" alt="Proyecto industrial 7" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/8.png" alt="Proyecto industrial 8" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/industrial/9.png" alt="Proyecto industrial 9" loading="lazy"></figure>
+                            </div>
                         </article>
                     </div>
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-6">
                         <article class="project-card project-card-coral">
-                            <span class="project-number">02 / COLABORACIÓN</span>
-                            <div class="project-mark mark-team" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <h3>Ideas en conjunto</h3>
-                            <p>Unimos perspectivas y talento para encontrar mejores soluciones.</p>
-                        </article>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <article class="project-card project-card-blue">
-                            <span class="project-number">03 / RESULTADOS</span>
-                            <div class="project-mark mark-result" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <h3>Avances que cuentan</h3>
-                            <p>Llevamos cada iniciativa a resultados concretos y medibles.</p>
+                            <h3>Servicios para tu operación</h3>
+                            <div class="project-gallery" aria-label="Galería de servicios">
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/1.png" alt="Servicio 1" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/2.png" alt="Servicio 2" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/3.png" alt="Servicio 3" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/4.png" alt="Servicio 4" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/5.png" alt="Servicio 5" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/6.png" alt="Servicio 6" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/7.png" alt="Servicio 7" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/8.png" alt="Servicio 8" loading="lazy"></figure>
+                                <figure class="project-gallery-item"><img src="/assets/images/servicios/9.png" alt="Servicio 9" loading="lazy"></figure>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -95,21 +103,18 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <div class="row g-3 about-grid">
                     <article class="col-12 col-md-4" id="mision">
                         <div class="about-card">
-                            <span class="about-card-number">01</span>
                             <h3>Misión</h3>
                             <p>Brindar soluciones integrales de mantenimiento, ingeniería y proyectos industriales que contribuyan a la continuidad y eficiencia de las operaciones de nuestros clientes, mediante una ejecución segura, profesional y confiable, cumpliendo los alcances, tiempos y estándares acordados.</p>
                         </div>
                     </article>
                     <article class="col-12 col-md-4" id="vision">
                         <div class="about-card">
-                            <span class="about-card-number">02</span>
                             <h3>Visión</h3>
                             <p>Consolidar a SS-PROYEC como una empresa reconocida y confiable en el sector industrial, distinguiéndonos por nuestra capacidad de respuesta, calidad de ejecución y desarrollo de soluciones que generen relaciones de largo plazo con nuestros clientes.</p>
                         </div>
                     </article>
                     <article class="col-12 col-md-4" id="valores">
                         <div class="about-card values-card">
-                            <span class="about-card-number">03</span>
                             <h3>Valores</h3>
                             <ul>
                                 <li>Seguridad</li>
