@@ -5,6 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
         year.textContent = new Date().getFullYear();
     }
 
+    const contactForm = document.querySelector('#contactForm');
+
+    if (contactForm instanceof HTMLFormElement) {
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const subject = 'Consulta desde el sitio web';
+            const body = [
+                `Nombre: ${formData.get('name')}`,
+                `Correo: ${formData.get('email')}`,
+                `Teléfono: ${formData.get('phone') || 'No proporcionado'}`,
+                '',
+                'Mensaje:',
+                formData.get('message')
+            ].join('\n');
+            const mailtoUrl = `mailto:contacto@ss-proyec.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoUrl;
+        });
+    }
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scrollRevealTargets = document.querySelectorAll(
         'main > section, .project-card, .about-card, .site-footer'

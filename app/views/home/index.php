@@ -9,7 +9,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= $title ?> | SS-PROYECT</title>
+    <title><?= $title ?> | SS-PROYEC</title>
     <link rel="icon" type="image/png" href="/assets/images/7.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,13 +132,57 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
 
         <section class="contact-section page-section" id="contacto">
             <div class="container contact-content">
-                <div>
+                <div class="contact-copy">
                     <p class="eyebrow">Hablemos</p>
                     <h2>¿Tienes una idea en mente?</h2>
+                    <button class="btn btn-lime" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        Conversemos <span aria-hidden="true">↗</span>
+                    </button>
                 </div>
-                <a class="btn btn-lime" href="mailto:contacto@ss-proyec.com">Conversemos <span aria-hidden="true">↗</span></a>
+                <figure class="contact-visual">
+                    <img src="/assets/images/contacto.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización, instalaciones y proyectos">
+                </figure>
             </div>
         </section>
+
+        <div class="modal fade contact-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div>
+                            <p class="eyebrow eyebrow-dark mb-2">Hablemos</p>
+                            <h2 class="modal-title" id="contactModalTitle">Cuéntanos tu idea</h2>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="modal-body">
+                            <p class="contact-form-note">Completa tus datos y se abrirá tu aplicación de correo para enviar el mensaje.</p>
+                            <div class="mb-3">
+                                <label class="form-label" for="contactName">Nombre</label>
+                                <input class="form-control" type="text" id="contactName" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="contactEmail">Correo electrónico</label>
+                                <input class="form-control" type="email" id="contactEmail" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="contactPhone">Teléfono <span class="text-muted">(opcional)</span></label>
+                                <input class="form-control" type="tel" id="contactPhone" name="phone" autocomplete="tel">
+                            </div>
+                            <div>
+                                <label class="form-label" for="contactMessage">Mensaje</label>
+                                <textarea class="form-control" id="contactMessage" name="message" rows="4" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-outline-dark" type="button" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-lime" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="site-footer">

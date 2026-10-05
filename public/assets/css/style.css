@@ -586,7 +586,7 @@ article[id] {
 
 .contact-section {
     padding: 70px 0;
-    background: var(--coral);
+    background-color: #eaf2f8;
 }
 
 .contact-content {
@@ -594,6 +594,10 @@ article[id] {
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+}
+
+.contact-copy {
+    flex: 1 1 55%;
 }
 
 .contact-content .eyebrow {
@@ -607,16 +611,81 @@ article[id] {
 }
 
 .contact-content .btn-lime {
+    margin-top: 24px;
     flex: 0 0 auto;
     border-color: var(--ink);
     background: var(--ink);
     color: var(--paper);
 }
 
+.contact-visual {
+    flex: 0 1 42%;
+    margin: 0;
+}
+
+.contact-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .contact-content .btn-lime:hover,
 .contact-content .btn-lime:focus {
     border-color: var(--forest);
     background: var(--forest);
+}
+
+.contact-content button.btn-lime,
+.contact-modal .btn-lime {
+    font-family: var(--body-font);
+    cursor: pointer;
+}
+
+.contact-modal .modal-content {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper);
+    color: var(--ink);
+}
+
+.contact-modal .modal-header,
+.contact-modal .modal-footer {
+    padding: 22px 24px;
+    border-color: var(--line);
+}
+
+.contact-modal .modal-title {
+    margin: 0;
+    font-family: var(--display-font);
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.contact-modal .modal-body {
+    padding: 22px 24px;
+}
+
+.contact-form-note {
+    margin: 0 0 20px;
+    color: #555b60;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-form .form-label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-form .form-control {
+    border-color: rgba(17, 17, 17, 0.22);
+    border-radius: 3px;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--forest);
+    box-shadow: 0 0 0 0.2rem rgba(8, 8, 8, 0.12);
 }
 
 .site-footer {
@@ -787,6 +856,16 @@ article[id] {
 
     .contact-section {
         padding: 56px 0;
+    }
+
+    .contact-copy,
+    .contact-visual {
+        width: 100%;
+    }
+
+    .contact-visual {
+        max-width: 420px;
+        align-self: center;
     }
 
     .contact-content h2 {
