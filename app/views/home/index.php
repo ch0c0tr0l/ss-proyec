@@ -157,23 +157,28 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                     </div>
                     <form class="contact-form" id="contactForm">
                         <div class="modal-body">
-                            <p class="contact-form-note">Completa tus datos y se abrirá tu aplicación de correo para enviar el mensaje.</p>
+                            <p class="contact-form-note">Completa tus datos y enviaremos tu mensaje a nuestro equipo.</p>
                             <div class="mb-3">
                                 <label class="form-label" for="contactName">Nombre</label>
-                                <input class="form-control" type="text" id="contactName" name="name" autocomplete="name" required>
+                                <input class="form-control" type="text" id="contactName" name="name" autocomplete="name" maxlength="150" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="contactEmail">Correo electrónico</label>
-                                <input class="form-control" type="email" id="contactEmail" name="email" autocomplete="email" required>
+                                <input class="form-control" type="email" id="contactEmail" name="email" autocomplete="email" maxlength="254" required>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="contactPhone">Teléfono <span class="text-muted">(opcional)</span></label>
-                                <input class="form-control" type="tel" id="contactPhone" name="phone" autocomplete="tel">
+                                <input class="form-control" type="tel" id="contactPhone" name="phone" autocomplete="tel" maxlength="40">
                             </div>
                             <div>
                                 <label class="form-label" for="contactMessage">Mensaje</label>
-                                <textarea class="form-control" id="contactMessage" name="message" rows="4" required></textarea>
+                                <textarea class="form-control" id="contactMessage" name="message" rows="4" maxlength="5000" required></textarea>
                             </div>
+                            <div class="contact-honeypot" aria-hidden="true">
+                                <label for="contactWebsite">No completar este campo</label>
+                                <input type="text" id="contactWebsite" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-outline-dark" type="button" data-bs-dismiss="modal">Cancelar</button>
