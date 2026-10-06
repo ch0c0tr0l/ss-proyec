@@ -9,4 +9,4 @@ RewriteRule ^public(?:/(.*))?$ /$1 [R=301,L,NE]
 RewriteRule ^public(?:/|$) - [L]
 
 RewriteRule ^$ public/index.php [L]
-RewriteRule ^(.*)$ public/$1 [L]
+RewriteRule ^(.+)$ public/$1 [L]
