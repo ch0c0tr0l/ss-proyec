@@ -16,6 +16,7 @@ public/
 ```
 
 La vista de inicio carga Bootstrap 5.3.3 desde jsDelivr y los estilos locales desde `public/assets/css/style.css`.
+El directorio `public/` contiene los archivos servidos por la web. En Hostinger, el `.htaccess` de la raíz dirige las solicitudes hacia `public/` y bloquea el acceso web a `app/` y `vendor/`.
 
 ## Ejecutar localmente
 
@@ -28,3 +29,14 @@ php -S localhost:8000 -t public
 ```
 
 Abre [http://localhost:8000](http://localhost:8000) en el navegador.
+
+## Desplegar desde Git en Hostinger
+
+1. En hPanel, abre **Sitios web → Administrar → Git** y agrega `https://github.com/ch0c0tr0l/ss-proyec.git`.
+2. Selecciona la rama `main` y activa el despliegue automático.
+3. Usa como directorio de instalación la raíz de `public_html` (no una subcarpeta). El repositorio debe quedar allí con `.htaccess`, `app/` y `public/` al mismo nivel.
+4. Haz el primer despliegue desde hPanel. Las siguientes publicaciones se harán al subir cambios a `main`.
+
+El `.htaccess` de la raíz sirve `public/index.php` en `/` y reescribe las rutas de recursos a `public/`, así que no es necesario mover el contenido de `public/` a `public_html`. También impide el acceso web directo a `app/`, `vendor/` y archivos ocultos. Requiere que el hosting permita reglas `mod_rewrite` en `.htaccess`.
+
+El directorio `vendor/` se excluye de Git. Este proyecto no requiere Composer para la página actual. Si se agregan dependencias de Composer, habrá que ejecutar `composer install --no-dev --optimize-autoloader` por SSH después del despliegue, desde la raíz del repositorio; no subir `vendor/` al repositorio.
