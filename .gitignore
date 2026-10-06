@@ -1,4 +1,7 @@
 /vendor/
 /.env
+<<<<<<< HEAD
 /.env.*
 !/.env.example
+=======
+>>>>>>> 69960b07339f7b72a0ed45dc54d8933f8b841664
