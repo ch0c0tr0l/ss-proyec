@@ -28,12 +28,38 @@ if (!is_file($autoloadPath)) {
 
 require $autoloadPath;
 
-$smtpHost = getenv('SMTP_HOST') ?: 'smtp.hostinger.com';
-$smtpPort = filter_var(getenv('SMTP_PORT') ?: '465', FILTER_VALIDATE_INT);
-$smtpEncryption = strtolower(getenv('SMTP_ENCRYPTION') ?: 'ssl');
-$smtpUsername = getenv('SMTP_USERNAME') ?: '';
-$smtpPassword = getenv('SMTP_PASSWORD') ?: '';
-$fromAddress = getenv('MAIL_FROM') ?: 'contacto@ss-proyec.com';
+$dotenvPath = dirname(__DIR__) . '/.env';
+$dotenvValues = [];
+
+if (is_file($dotenvPath)) {
+    $parsedValues = parse_ini_file($dotenvPath, false, INI_SCANNER_RAW);
+
+    if ($parsedValues === false) {
+        error_log('Contact mail .env file could not be parsed.');
+        $respond(503, ['error' => 'El servicio de contacto no está configurado correctamente.']);
+    }
+
+    $dotenvValues = $parsedValues;
+}
+
+$getConfigValue = static function (string $name, string $default = '') use ($dotenvValues): string {
+    $environmentValue = getenv($name);
+
+    if ($environmentValue !== false && $environmentValue !== '') {
+        return $environmentValue;
+    }
+
+    $dotenvValue = $dotenvValues[$name] ?? null;
+
+    return is_string($dotenvValue) && $dotenvValue !== '' ? $dotenvValue : $default;
+};
+
+$smtpHost = $getConfigValue('SMTP_HOST', 'smtp.hostinger.com');
+$smtpPort = filter_var($getConfigValue('SMTP_PORT', '465'), FILTER_VALIDATE_INT);
+$smtpEncryption = strtolower($getConfigValue('SMTP_ENCRYPTION', 'ssl'));
+$smtpUsername = $getConfigValue('SMTP_USERNAME');
+$smtpPassword = $getConfigValue('SMTP_PASSWORD');
+$fromAddress = $getConfigValue('MAIL_FROM', 'contacto@ss-proyec.com');
 
 if ($smtpPort === false || !in_array($smtpEncryption, ['ssl', 'tls'], true)) {
     error_log('Contact mail SMTP configuration has an invalid port or encryption type.');

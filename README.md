@@ -22,29 +22,30 @@ En producción, `public/` es la raíz web lógica. El `.htaccess` de este reposi
 
 Requiere PHP 8 o posterior con OpenSSL habilitado, Composer y conexion a internet para cargar Bootstrap desde el CDN y enviar correo por SMTP.
 
-Desde la carpeta del proyecto, ejecuta:
+Desde la carpeta del proyecto, instala las dependencias y crea tu archivo privado de configuración:
 
 ```powershell
 composer install
-$env:SMTP_HOST = "smtp.hostinger.com"
-$env:SMTP_PORT = "465"
-$env:SMTP_ENCRYPTION = "ssl"
-$env:SMTP_USERNAME = "contacto@ss-proyec.com"
-$env:SMTP_PASSWORD = "<contrasena-del-buzon>"
-$env:MAIL_FROM = "contacto@ss-proyec.com"
+Copy-Item .env.example .env
+notepad .env
+```
+
+Completa `SMTP_PASSWORD` con la contraseña del buzón SMTP, guarda el archivo y luego inicia el servidor:
+
+```powershell
 php -S localhost:8000 -t public
 ```
 
 Abre [http://localhost:8000](http://localhost:8000) en el navegador.
 
-Configura `SMTP_PASSWORD` con la contraseña del buzón en la terminal donde inicies PHP; no la agregues al código ni al repositorio. El formulario envía los mensajes a `contacto@ss-proyec.com` y usa el correo del visitante como dirección de respuesta.
+El endpoint carga `.env` desde la raíz del proyecto. Las variables de entorno ya definidas en el servidor tienen prioridad sobre los valores del archivo. El `.env` está excluido de Git; nunca subas contraseñas al repositorio. El formulario envía los mensajes a `contacto@ss-proyec.com` y usa el correo del visitante como dirección de respuesta.
 
-En el hosting, define esas mismas variables de entorno para PHP y confirma en el panel de correo que SMTP esté habilitado para el buzón.
+En el hosting, copia `.env.example` a `.env` en la raíz del proyecto, completa las credenciales SMTP y restringe sus permisos. Confirma en el panel de correo que SMTP esté habilitado para el buzón.
 
-## Desplegar la rama Jose en Hostinger
+## Desplegar la rama main en Hostinger
 
 1. En hPanel, abre **Sitios web → Administrar → Git** y agrega `https://github.com/ch0c0tr0l/ss-proyec.git`.
-2. Selecciona la rama `Jose`, activa el despliegue automático y usa la raíz de `public_html` como directorio de instalación. No selecciones `public/`: el repositorio completo debe quedar en `public_html`, con `.htaccess`, `app/` y `public/` al mismo nivel.
+2. Selecciona la rama `main`, activa el despliegue automático y usa la raíz de `public_html` como directorio de instalación. No selecciones `public/`: el repositorio completo debe quedar en `public_html`, con `.htaccess`, `app/` y `public/` al mismo nivel.
 3. Ejecuta el primer despliegue. La configuración `.htaccess` sirve la página desde `public/` y conserva `app/` fuera de las rutas públicas. Requiere que Apache permita `mod_rewrite` y las directivas de `.htaccess`.
 4. Instala las dependencias del formulario por SSH desde la raíz del repositorio en Hostinger:
 
@@ -53,6 +54,14 @@ En el hosting, define esas mismas variables de entorno para PHP y confirma en el
    ```
 
    `vendor/` está excluido de Git y debe permanecer en la raíz, junto a `app/` y `public/`. Si un despliegue posterior elimina `vendor/`, repite el comando.
-5. Configura las variables `SMTP_HOST`, `SMTP_PORT`, `SMTP_ENCRYPTION`, `SMTP_USERNAME`, `SMTP_PASSWORD` y `MAIL_FROM` para PHP desde el mecanismo de variables de entorno que ofrezca tu plan de hosting. No guardes contraseñas en el repositorio ni en `public_html`.
+5. Crea el archivo `.env` desde la plantilla y restringe sus permisos:
 
-Cada `push` a `Jose` actualizará el sitio si la integración Git de hPanel tiene activado el despliegue automático.
+   ```bash
+   cp .env.example .env
+   chmod 600 .env
+   nano .env
+   ```
+
+   Completa los valores SMTP en el editor y guarda el archivo. `.env` permanece fuera del control de versiones y el `.htaccess` deniega el acceso web a archivos ocultos. No incluyas contraseñas en Git.
+
+Cada `push` a `main` actualizará el sitio si la integración Git de hPanel tiene activado el despliegue automático.
