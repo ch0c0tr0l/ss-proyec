@@ -64,4 +64,21 @@ En el hosting, copia `.env.example` a `.env` en la raíz del proyecto, completa 
 
    Completa los valores SMTP en el editor y guarda el archivo. `.env` permanece fuera del control de versiones y el `.htaccess` deniega el acceso web a archivos ocultos. No incluyas contraseñas en Git.
 
+En el hosting, define esas mismas variables de entorno para PHP y confirma en el panel de correo que SMTP esté habilitado para el buzón.
+
+## Desplegar la rama Jose en Hostinger
+
+1. En hPanel, abre **Sitios web → Administrar → Git** y agrega `https://github.com/ch0c0tr0l/ss-proyec.git`.
+2. Selecciona la rama `Jose`, activa el despliegue automático y usa la raíz de `public_html` como directorio de instalación. No selecciones `public/`: el repositorio completo debe quedar en `public_html`, con `.htaccess`, `app/` y `public/` al mismo nivel.
+3. Ejecuta el primer despliegue. La configuración `.htaccess` sirve la página desde `public/` y conserva `app/` fuera de las rutas públicas. Requiere que Apache permita `mod_rewrite` y las directivas de `.htaccess`.
+4. Instala las dependencias del formulario por SSH desde la raíz del repositorio en Hostinger:
+
+   ```bash
+   composer install --no-dev --optimize-autoloader
+   ```
+
+   `vendor/` está excluido de Git y debe permanecer en la raíz, junto a `app/` y `public/`. Si un despliegue posterior elimina `vendor/`, repite el comando.
+5. Configura las variables `SMTP_HOST`, `SMTP_PORT`, `SMTP_ENCRYPTION`, `SMTP_USERNAME`, `SMTP_PASSWORD` y `MAIL_FROM` para PHP desde el mecanismo de variables de entorno que ofrezca tu plan de hosting. No guardes contraseñas en el repositorio ni en `public_html`.
+
+Cada `push` a `Jose` actualizará el sitio si la integración Git de hPanel tiene activado el despliegue automático.
 Cada `push` a `main` actualizará el sitio si la integración Git de hPanel tiene activado el despliegue automático.

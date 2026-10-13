@@ -5,6 +5,60 @@ document.addEventListener('DOMContentLoaded', () => {
         year.textContent = new Date().getFullYear();
     }
 
+    document.querySelectorAll('.project-gallery-toggle').forEach((toggle) => {
+        const panelId = toggle.getAttribute('aria-controls');
+        const panel = panelId ? document.getElementById(panelId) : null;
+        const card = toggle.closest('.project-card');
+
+        if (!(toggle instanceof HTMLButtonElement) || !(panel instanceof HTMLElement) || !card) {
+            return;
+        }
+
+        toggle.addEventListener('click', () => {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+            toggle.setAttribute('aria-expanded', String(!isExpanded));
+            panel.setAttribute('aria-hidden', String(isExpanded));
+            panel.inert = isExpanded;
+            card.classList.toggle('is-gallery-open', !isExpanded);
+        });
+    });
+
+    const projectImageModal = document.querySelector('#projectImageModal');
+    const projectImageModalImage = document.querySelector('#projectImageModalImage');
+    const projectImageModalTitle = document.querySelector('#projectImageModalTitle');
+    const projectImageModalCaption = document.querySelector('#projectImageModalCaption');
+
+    if (
+        projectImageModal instanceof HTMLElement &&
+        projectImageModalImage instanceof HTMLImageElement &&
+        projectImageModalTitle instanceof HTMLElement &&
+        projectImageModalCaption instanceof HTMLElement
+    ) {
+        projectImageModal.addEventListener('show.bs.modal', (event) => {
+            const trigger = event.relatedTarget;
+            const thumbnail = trigger instanceof HTMLElement
+                ? trigger.querySelector('.project-gallery-item img')
+                : null;
+
+            if (!(thumbnail instanceof HTMLImageElement)) {
+                return;
+            }
+
+            projectImageModalImage.src = thumbnail.src;
+            projectImageModalImage.alt = thumbnail.alt;
+            projectImageModalTitle.textContent = thumbnail.alt;
+            projectImageModalCaption.textContent = thumbnail.alt;
+        });
+
+        projectImageModal.addEventListener('hidden.bs.modal', () => {
+            projectImageModalImage.removeAttribute('src');
+            projectImageModalImage.alt = '';
+            projectImageModalTitle.textContent = 'Imagen ampliada';
+            projectImageModalCaption.textContent = '';
+        });
+    }
+
     const contactForm = document.querySelector('#contactForm');
 
     if (contactForm instanceof HTMLFormElement) {
