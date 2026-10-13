@@ -59,7 +59,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <div class="row g-3 project-list">
                     <div class="col-12 col-md-6">
                         <article class="project-card project-card-green">
-                            <h3></h3>
+                            <h3>Proyectos industriales</h3>
                             <button class="project-gallery-toggle" type="button" aria-expanded="false" aria-controls="industrial-gallery">
                                 Ver proyectos industriales <span aria-hidden="true">+</span>
                             </button>
@@ -74,7 +74,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                     </div>
                     <div class="col-12 col-md-6">
                         <article class="project-card project-card-coral">
-                            <h3></h3>
+                            <h3>Servicios para tu operación</h3>
                             <button class="project-gallery-toggle" type="button" aria-expanded="false" aria-controls="services-gallery">
                                 Ver servicios <span aria-hidden="true">+</span>
                             </button>
