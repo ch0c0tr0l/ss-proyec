@@ -17,7 +17,6 @@ html {
 }
 
 body {
-    min-width: 320px;
     min-height: 100vh;
     margin: 0;
     background: var(--paper);
@@ -377,11 +376,17 @@ article[id] {
 }
 
 .project-card-green {
-    background: #e2f1ed;
+    background-color: #e2f1ed;
+    background-image: linear-gradient(rgba(226, 241, 237, 0.42), rgba(226, 241, 237, 0.42)), url("/assets/images/industrial/fondo.png");
+    background-position: center;
+    background-size: cover;
 }
 
 .project-card-coral {
-    background: #f8e7e1;
+    background-color: #f8e7e1;
+    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/servicios/fondo.png");
+    background-position: center;
+    background-size: cover;
 }
 
 .project-card-blue {
@@ -477,31 +482,87 @@ article[id] {
     content: "—";
 }
 
+.project-gallery-toggle {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--forest);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--forest);
+    font: inherit;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+.project-gallery-toggle:hover,
+.project-gallery-toggle:focus-visible {
+    background: var(--forest);
+    color: #fff;
+}
+
+.project-gallery-toggle:focus-visible,
+.project-gallery:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+.project-gallery-toggle span {
+    font-size: 22px;
+    line-height: 1;
+    transition: transform 180ms ease;
+}
+
+.project-card.is-gallery-open .project-gallery-toggle span {
+    transform: rotate(45deg);
+}
+
+.project-gallery-panel {
+    width: 100%;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: max-height 320ms ease, margin-top 320ms ease;
+}
+
+.project-card.is-gallery-open .project-gallery-panel {
+    max-height: 230px;
+    margin-top: 14px;
+}
+
 .project-gallery {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0;
-    margin-top: 22px;
-    overflow: hidden;
-    border: 1px solid #6d9fbd;
+    grid-auto-columns: calc((100% - 12px) / 3);
+    grid-auto-flow: column;
+    grid-template-rows: 1fr;
+    gap: 6px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
 }
 
 .project-gallery-item {
+    display: block;
+    width: 100%;
+    padding: 0;
     overflow: hidden;
     aspect-ratio: 1;
     margin: 0;
-    border-right: 1px solid #6d9fbd;
-    border-bottom: 1px solid #6d9fbd;
+    border: 1px solid #6d9fbd;
     background: #fff;
+    cursor: zoom-in;
+    scroll-snap-align: start;
 }
 
-.project-gallery-item:nth-child(3n) {
-    border-right: 0;
-}
-
-.project-gallery-item:nth-last-child(-n + 3) {
-    border-bottom: 0;
+.project-gallery-item:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
 }
 
 .project-gallery-item img {
@@ -646,6 +707,42 @@ article[id] {
     border-radius: 4px;
     background: var(--paper);
     color: var(--ink);
+}
+
+.project-image-modal .modal-content {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background: #111;
+    color: #fff;
+}
+
+.project-image-modal .modal-header {
+    padding: 14px 18px;
+    border: 0;
+}
+
+.project-image-modal .modal-title {
+    margin: 0;
+    font-family: var(--display-font);
+    font-size: 20px;
+}
+
+.project-image-modal .modal-body {
+    padding: 0 18px 16px;
+    text-align: center;
+}
+
+.project-image-modal .modal-body img {
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 150px);
+    object-fit: contain;
+}
+
+.project-image-modal .modal-body p {
+    margin: 10px 0 0;
+    color: #fff;
+    font-size: 14px;
 }
 
 .contact-modal .modal-header,
@@ -904,7 +1001,10 @@ article[id] {
         scroll-behavior: auto;
     }
 
-    .project-gallery-item img {
+    .project-gallery-item img,
+    .project-gallery-panel,
+    .project-gallery-toggle,
+    .project-gallery-toggle span {
         transition: none;
     }
 

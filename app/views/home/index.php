@@ -42,7 +42,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
             <div class="container hero-grid">
                 <h1 class="hero-title">Soluciones que mantienen <em>tu operación en movimiento.</em></h1>
                 <figure class="hero-visual">
-                    <img src="/assets/images/imagen6.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización e instalaciones">
+                    <img src="/assets/images/5.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización e instalaciones">
                 </figure>
             </div>
         </section>
@@ -52,40 +52,38 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <div class="section-heading">
                     <div>
                         <p class="eyebrow eyebrow-dark">Lo que hacemos</p>
-                        <h2>Dos ramas, un mismo <em>compromiso.</em></h2>
+                        <h2>Dos divisiones, un mismo <em>compromiso.</em></h2>
                     </div>
                     <p class="section-intro">Integramos proyectos industriales y servicios para responder a las necesidades de cada operación.</p>
                 </div>
                 <div class="row g-3 project-list">
                     <div class="col-12 col-md-6">
                         <article class="project-card project-card-green">
-                            <h3>Proyectos industriales</h3>
-                            <div class="project-gallery" aria-label="Galería de proyectos industriales">
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/1.png" alt="Proyecto industrial 1" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/2.png" alt="Proyecto industrial 2" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/3.png" alt="Proyecto industrial 3" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/4.png" alt="Proyecto industrial 4" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/5.png" alt="Proyecto industrial 5" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/6.png" alt="Proyecto industrial 6" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/7.png" alt="Proyecto industrial 7" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/8.png" alt="Proyecto industrial 8" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/industrial/9.png" alt="Proyecto industrial 9" loading="lazy"></figure>
+                            <h3></h3>
+                            <button class="project-gallery-toggle" type="button" aria-expanded="false" aria-controls="industrial-gallery">
+                                Ver proyectos industriales <span aria-hidden="true">+</span>
+                            </button>
+                            <div class="project-gallery-panel" id="industrial-gallery" aria-hidden="true" inert>
+                                <div class="project-gallery" role="region" aria-label="Galería de proyectos industriales" tabindex="0">
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Mantenimiento industrial"><img src="/assets/images/industrial/MantenimientoIndustrial.png" alt="Mantenimiento industrial" loading="lazy"></button>
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Pailería industrial"><img src="/assets/images/industrial/Paileria.png" alt="Pailería industrial" loading="lazy"></button>
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Instalaciones industriales"><img src="/assets/images/industrial/instalacionesIndustriales.png" alt="Instalaciones industriales" loading="lazy"></button>
+                                </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-12 col-md-6">
                         <article class="project-card project-card-coral">
-                            <h3>Servicios para tu operación</h3>
-                            <div class="project-gallery" aria-label="Galería de servicios">
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/1.png" alt="Servicio 1" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/2.png" alt="Servicio 2" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/3.png" alt="Servicio 3" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/4.png" alt="Servicio 4" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/5.png" alt="Servicio 5" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/6.png" alt="Servicio 6" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/7.png" alt="Servicio 7" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/8.png" alt="Servicio 8" loading="lazy"></figure>
-                                <figure class="project-gallery-item"><img src="/assets/images/servicios/9.png" alt="Servicio 9" loading="lazy"></figure>
+                            <h3></h3>
+                            <button class="project-gallery-toggle" type="button" aria-expanded="false" aria-controls="services-gallery">
+                                Ver servicios <span aria-hidden="true">+</span>
+                            </button>
+                            <div class="project-gallery-panel" id="services-gallery" aria-hidden="true" inert>
+                                <div class="project-gallery" role="region" aria-label="Galería de servicios" tabindex="0">
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 1"><img src="/assets/images/servicios/1.png" alt="Servicio 1" loading="lazy"></button>
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 2"><img src="/assets/images/servicios/2.png" alt="Servicio 2" loading="lazy"></button>
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 3"><img src="/assets/images/servicios/3.png" alt="Servicio 3" loading="lazy"></button>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -185,6 +183,21 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                             <button class="btn btn-lime" type="submit">Enviar mensaje <span aria-hidden="true">↗</span></button>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade project-image-modal" id="projectImageModal" tabindex="-1" aria-labelledby="projectImageModalTitle" aria-describedby="projectImageModalCaption" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="projectImageModalTitle">Imagen ampliada</h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar imagen"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img id="projectImageModalImage" src="" alt="">
+                        <p id="projectImageModalCaption"></p>
+                    </div>
                 </div>
             </div>
         </div>
