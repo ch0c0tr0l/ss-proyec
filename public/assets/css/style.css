@@ -911,6 +911,20 @@ article[id] {
 }
 
 @media (max-width: 767.98px) {
+    .project-card.project-card-green,
+    .project-card.project-card-coral {
+        min-height: 307px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%, 100% auto;
+    }
+
+    @media (max-width: 575.98px) {
+        .project-card.project-card-green,
+        .project-card.project-card-coral {
+            min-height: max(210px, calc(59.4vw - 23.17px));
+        }
+    }
+
     .hero-section {
         padding: 62px 0 72px;
     }
