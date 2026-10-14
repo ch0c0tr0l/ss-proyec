@@ -59,10 +59,10 @@ article[id] {
     display: block;
     width: clamp(150px, 38vw, 220px);
     max-width: calc(100vw - 112px);
-    height: clamp(44px, 11vw, 54px);
+    max-height: 60px;
+    height: auto;
     flex: 0 1 auto;
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
 }
 
 .navbar-nav .nav-link {
@@ -359,6 +359,7 @@ article[id] {
     color: #555b60;
     font-size: 15px;
     line-height: 1.7;
+    text-align: center;
 }
 
 .project-list {
@@ -377,16 +378,32 @@ article[id] {
 
 .project-card-green {
     background-color: #e2f1ed;
-    background-image: linear-gradient(rgba(226, 241, 237, 0.42), rgba(226, 241, 237, 0.42)), url("/assets/images/industrial/fondo.png");
-    background-position: center;
-    background-size: cover;
 }
 
 .project-card-coral {
     background-color: #f8e7e1;
-    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/servicios/fondo.png");
+}
+
+.project-card-green::before,
+.project-card-coral::before {
+    display: block;
+    width: calc(100% + 46px);
+    margin: -23px -23px 18px;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    content: "";
+    flex: 0 0 auto;
+}
+
+.project-card-green::before {
+    aspect-ratio: 1672 / 941;
+    background-image: linear-gradient(rgba(226, 241, 237, 0.42), rgba(226, 241, 237, 0.42)), url("/assets/images/industrial/grupo1.png");
+}
+
+.project-card-coral::before {
+    aspect-ratio: 605 / 370;
+    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/servicios/fondo.png");
 }
 
 .project-card-blue {
@@ -535,6 +552,10 @@ article[id] {
     margin-top: 14px;
 }
 
+.project-card-green.is-gallery-open #industrial-gallery {
+    max-height: 1000px;
+}
+
 .project-gallery {
     display: grid;
     width: 100%;
@@ -545,6 +566,16 @@ article[id] {
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
+}
+
+#industrial-gallery .project-gallery {
+    grid-auto-columns: auto;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+    overflow: visible;
+    overscroll-behavior-x: auto;
+    scroll-snap-type: none;
 }
 
 .project-gallery-item {
@@ -913,18 +944,20 @@ article[id] {
 @media (max-width: 767.98px) {
     .project-card.project-card-green,
     .project-card.project-card-coral {
-        min-height: 307px;
-        background-repeat: no-repeat;
-        background-size: 100% 100%, 100% auto;
+        min-height: 0;
     }
 
-    @media (max-width: 575.98px) {
-        .project-card.project-card-green,
-        .project-card.project-card-coral {
-            min-height: max(210px, calc(59.4vw - 23.17px));
-        }
+    .project-card-green h3,
+    .project-card-coral h3 {
+        margin: 0 0 8px;
     }
 
+    .project-gallery-toggle {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
     .hero-section {
         padding: 62px 0 72px;
     }

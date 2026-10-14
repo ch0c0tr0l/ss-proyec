@@ -42,7 +42,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
             <div class="container hero-grid">
                 <h1 class="hero-title">Soluciones que mantienen <em>tu operación en movimiento.</em></h1>
                 <figure class="hero-visual">
-                    <img src="/assets/images/5.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización e instalaciones">
+                    <img src="/assets/images/fondo1.png" alt="SS-PROYEC: ingeniería, mantenimiento, automatización e instalaciones">
                 </figure>
             </div>
         </section>
@@ -54,12 +54,11 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                         <p class="eyebrow eyebrow-dark">Lo que hacemos</p>
                         <h2>Dos divisiones, un mismo <em>compromiso.</em></h2>
                     </div>
-                    <p class="section-intro">Integramos proyectos industriales y servicios para responder a las necesidades de cada operación.</p>
                 </div>
                 <div class="row g-3 project-list">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-lg-4">
                         <article class="project-card project-card-green">
-                            <h3></h3>
+                            <h3>Proyectos industriales</h3>
                             <button class="project-gallery-toggle" type="button" aria-expanded="false" aria-controls="industrial-gallery">
                                 Ver proyectos industriales <span aria-hidden="true">+</span>
                             </button>
@@ -68,13 +67,17 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                                     <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Mantenimiento industrial"><img src="/assets/images/industrial/MantenimientoIndustrial.png" alt="Mantenimiento industrial" loading="lazy"></button>
                                     <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Pailería industrial"><img src="/assets/images/industrial/Paileria.png" alt="Pailería industrial" loading="lazy"></button>
                                     <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Instalaciones industriales"><img src="/assets/images/industrial/instalacionesIndustriales.png" alt="Instalaciones industriales" loading="lazy"></button>
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Automatizacion PLC"><img src="/assets/images/industrial/plc.png" alt="Automatización PLC" loading="lazy"></button>
                                 </div>
                             </div>
                         </article>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
+                        <p class="section-intro">Integramos proyectos industriales y servicios <br> para responder a las necesidades de cada operación.</p>
+                    </div>
+                    <div class="col-12 col-lg-4">
                         <article class="project-card project-card-coral">
-                            <h3></h3>
+                            <h3>Servicios para tu operación</h3>
                             <button class="project-gallery-toggle" type="button" aria-expanded="false" aria-controls="services-gallery">
                                 Ver servicios <span aria-hidden="true">+</span>
                             </button>
