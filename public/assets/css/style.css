@@ -402,8 +402,8 @@ article[id] {
 }
 
 .project-card-coral::before {
-    aspect-ratio: 605 / 370;
-    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/industrial/grupo1.png");
+    aspect-ratio: 1672 / 941;
+    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/servicios/grupo1.png");
 }
 
 .project-card-blue {
