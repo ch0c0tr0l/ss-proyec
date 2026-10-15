@@ -86,6 +86,7 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                                     <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 1"><img src="/assets/images/servicios/1.png" alt="Electricidad e Iluminacion" loading="lazy"></button>
                                     <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 2"><img src="/assets/images/servicios/2.png" alt="Mantenimiento de instalaciones" loading="lazy"></button>
                                     <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 3"><img src="/assets/images/servicios/3.png" alt="Adecuaciones e Instalaciones" loading="lazy"></button>
+                                    <button class="project-gallery-item" type="button" data-bs-toggle="modal" data-bs-target="#projectImageModal" aria-label="Ampliar imagen: Servicio 4"><img src="/assets/images/servicios/4.png" alt="Servicio 4" loading="lazy"></button>
                                 </div>
                             </div>
                         </article>
