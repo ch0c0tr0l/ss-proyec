@@ -137,6 +137,9 @@ $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
                 <div class="contact-copy">
                     <p class="eyebrow">Hablemos</p>
                     <h2>¿Tienes una idea en mente?</h2>
+                    <br>
+                    <p>Teléfono: 477 452 8725</p>
+                    <p>Correo: contacto@ss-proyec.com</p>
                     <button class="btn btn-lime" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
                         Conversemos <span aria-hidden="true">↗</span>
                     </button>

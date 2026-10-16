@@ -403,7 +403,7 @@ article[id] {
 
 .project-card-coral::before {
     aspect-ratio: 1672 / 941;
-    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/servicios/grupo1.png");
+    background-image: linear-gradient(rgba(248, 231, 225, 0.42), rgba(248, 231, 225, 0.42)), url("/assets/images/servicios/grupo2.png");
 }
 
 .project-card-blue {
